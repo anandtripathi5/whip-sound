@@ -16,10 +16,10 @@ dependency_links = [x.strip().replace('git+', '') for x in all_reqs \
 
 
 setup (
- name = 'whip-sound',
- description = 'Whip Sound Command line application that makes whip sound on providing different numeric options',
- version = '1.0.0',
- packages = find_packages(), # list of all packages
+ name='whip-sound',
+ description='Whip Sound Command line application that makes whip sound on providing different numeric options',
+ version='1.0.0',
+ packages=find_packages(), # list of all packages
  install_requires = install_requires,
  python_requires='>=2.7', # any python greater than 2.7
  entry_points='''
