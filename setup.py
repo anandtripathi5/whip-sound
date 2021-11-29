@@ -18,9 +18,11 @@ dependency_links = [x.strip().replace('git+', '') for x in all_reqs \
 setup (
  name='whip-sound',
  description='Whip Sound Command line application that makes whip sound on providing different numeric options',
- version='1.0.0',
- packages=find_packages(), # list of all packages
- install_requires = install_requires,
+ version='1.0.2',
+ packages=find_packages(),# list of all packages
+ install_requires=install_requires,
+ package_data={'': ['static/*.mp3']},
+ include_package_data=True,
  python_requires='>=2.7', # any python greater than 2.7
  entry_points='''
         [console_scripts]
@@ -32,7 +34,7 @@ setup (
  long_description_content_type="text/markdown",
  license='MIT',
  url='https://github.com/anandtripathi5/whip-sound',
- download_url='https://github.com/anandtripathi5/whip-sound/archive/1.0.0.tar.gz',
+ download_url='https://github.com/anandtripathi5/whip-sound/archive/1.0.2.tar.gz',
   dependency_links=dependency_links,
   author_email='anand.tripathi507@gmail.com',
   classifiers=[

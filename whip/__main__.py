@@ -5,13 +5,11 @@ from random import randint
 from threading import Thread
 
 import click
+import pkg_resources
 from playsound import playsound
 
 
 @click.command()
-# @click.option('--count', default=1, help='Number of greetings.')
-# @click.option('--name', prompt='Your name',
-#               help='The person to greet.')
 @click.argument('sound', required=False)
 def main(sound):
     """Whip Application uses the numeric option for different whip sounds. Please pass the option from 1-5 \n
@@ -22,7 +20,8 @@ def main(sound):
     done = False
     if sound == 'random':
         sound = randint(1, 5)
-    play_thread = Thread(target=lambda: playsound(f'static/{sound or 1}.mp3'))
+    file = pkg_resources.resource_filename(__name__, f"static/{sound or 1}.mp3")
+    play_thread = Thread(target=lambda: playsound(file))
     play_thread.start()
     for c in itertools.cycle(['|', '/', '-', '\\']):
         if done:
