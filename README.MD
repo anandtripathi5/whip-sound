@@ -3,7 +3,7 @@ Whip Application uses the numeric option for different whip sounds.
 # Installation
 ## Using Pip
 ```bash
-  $ pip install whip-sound
+  $ pip3 install whip-sound
 ```
 ## Manual
 ```bash
